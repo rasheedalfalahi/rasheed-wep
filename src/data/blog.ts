@@ -102,7 +102,7 @@ export const blogPosts: BlogPost[] = [
       'التصميم ليس مجرد إطار جمالي، بل هو هندسة دقيقة لترتيب الأفكار والبيانات بأسلوب يجعل القارئ يلاحظ، يفهم، ويتذكر الرسالة بأسرع وأوضح شكل ممكن.',
     category: 'الهندسة البصرية',
     categoryId: 'design',
-    date: 'أكتوبر 2026',
+    date: 'أكتوبر 21 2026',
     readTime: '3 دقائق',
     coverImage: '/images/projects/mdo3.jpg',
     sections: [
