@@ -1,9 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ========================================== -->
+  <!-- 1. الصفحة الرئيسية                         -->
+  <!-- ========================================== -->
   <url>
     <loc>https://rasheedalfalahi.netlify.app/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- ========================================== -->
+  <!-- 2. صفحات الأقسام الرئيسية                  -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/projects</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/blog</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/services</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/testimonials</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/contact</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- 3. روابط مقالات المدونة                    -->
+  <!-- ========================================== -->
+  <!-- مقال 1: الاستمرارية شيء عظيم: رسالة إلى كل مصمم يسعى لترك أثر -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/blog/1</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- مقال 2: التصميم للجميع: كيف تشكل البصريات حياتنا اليومية؟ -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/blog/2</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- مقال 3: الهندسة البصرية وتنظيم المعلومات -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/blog/3</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- مقال 4: قاعدة الـ 80% في التصميم -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/blog/4</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- مقال 5: نصيحة لمهندسي التصميم: كيف تصنع التفاصيل الصغيرة الفارق الكبير؟ -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/blog/5</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- 4. روابط صفحات المشاريع والأعمال           -->
+  <!-- ========================================== -->
+  <!-- مشروع 1: تصميم شعار مصور فوتوغرافي -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/1</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 2: شعار وهوية بصرية مبادرة تأهيل -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/2</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 3: تصميم هوية شعار فواحة العود -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/3</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 4: حملة قصصية لسرمد للعطور -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/4</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 5: كاروسيل الشهيد الرئيس إبراهيم الحمدي -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/5</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 6: تصميم ديوان أنا العربي -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/6</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 7: إنفوجرافيك الملكة بلقيس -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/7</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 8: تصميم خلفيات شاشات الجوال -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/8</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 9: كيفية حل المشكلات واتخاذ القرارات -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/9</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 10: بوسترات سوشيال ميديا دفعة أثر مصمم -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/10</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 11: تصميم بروفايل أناردس الدولية -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/11</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 12: كاروسيل ترويجي سرمد للعطور -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/12</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- مشروع 13: بوسترات سوشيال ميديا NeuroLink -->
+  <url>
+    <loc>https://rasheedalfalahi.netlify.app/#/project/13</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
