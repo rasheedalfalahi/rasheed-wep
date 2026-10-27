@@ -1,0 +1,42 @@
+{
+  "name": "Rasheed Alfalahi",
+  "short_name": "رشيد الفلاحي",
+  "description": "موقع المهندس البصري ومصمم الجرافيك رشيد الفلاحي - معرض الأعمال والخدمات",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#032a33",
+  "theme_color": "#032a33",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/images/projects/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/projects/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/projects/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/projects/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/projects/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

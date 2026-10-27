@@ -1,0 +1,482 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "ThmanyahSans";
+  src: url("/THMANYAHSANS-LIGHT.OTF") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  font-feature-settings: "salt" 1, "ss01" 1;
+}
+
+@font-face {
+  font-family: "ThmanyahSans";
+  src: url("/THMANYAHSANS-REGULAR.OTF") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  font-feature-settings: "salt" 1, "ss01" 1;
+}
+
+@font-face {
+  font-family: "ThmanyahSans";
+  src: url("/THMANYAHSANS-MEDIUM.OTF") format("opentype");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+  font-feature-settings: "salt" 1, "ss01" 1;
+}
+
+@font-face {
+  font-family: "ThmanyahSans";
+  src: url("/THMANYAHSANS-BOLD.OTF") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  font-feature-settings: "salt" 1, "ss01" 1;
+}
+
+@font-face {
+  font-family: "ThmanyahSans";
+  src: url("/THMANYAHSANS-BLACK.OTF") format("opentype");
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+  font-feature-settings: "salt" 1, "ss01" 1;
+}
+
+@theme {
+  --font-sans: "ThmanyahSans", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "ThmanyahSans", sans-serif;
+  --font-outfit: "ThmanyahSans", sans-serif;
+  --font-mono: "ThmanyahSans", ui-monospace, monospace;
+  
+  /* Custom Screen Breakpoint for Mobile Responsiveness */
+  --breakpoint-xs: 480px;
+  
+  /* Primary Teal Colors from User */
+  --color-brand-primary: #00989a;
+  --color-brand-deep: #045063;
+
+  /* night Mode Variables (Default) */
+  --color-bg: #032a33;
+  --color-card: #045063;
+  --color-text-main: #f1f5f9;
+  --color-text-muted: #8abcd1;
+  --color-border: rgba(255, 255, 255, 0.05);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-justify-arabic {
+    text-align: right;
+  }
+  @media (min-width: 640px) {
+    .text-justify-arabic {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  }
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    font-feature-settings: "salt" 1, "ss01" 1;
+    font-variant-ligatures: common-ligatures contextual;
+  }
+
+  body {
+    @apply font-arabic bg-bg text-text-main transition-colors duration-500 selection:bg-brand-primary selection:text-white text-base leading-[1.75] overflow-x-hidden;
+    direction: rtl;
+    letter-spacing: 0;
+    font-feature-settings: "salt" 1, "ss01" 1;
+    font-variant-ligatures: common-ligatures contextual;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    min-height: 100dvh;
+  }
+
+  p {
+    @apply leading-[1.8] mb-4 last:mb-0;
+    letter-spacing: 0;
+    font-feature-settings: "salt" 1, "ss01" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply leading-[1.3] mb-4 font-black tracking-normal;
+    letter-spacing: 0;
+    font-feature-settings: "salt" 1, "ss01" 1;
+    text-wrap: balance;
+  }
+
+  button, a, span, li, label, input, textarea {
+    letter-spacing: 0;
+    font-feature-settings: "salt" 1, "ss01" 1;
+  }
+
+  img, svg, video, canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Unlayered container rule so it always takes precedence over Tailwind's utility layer .container */
+.container {
+  width: 100% !important;
+  max-width: 1440px !important;
+  margin-inline: auto !important;
+  box-sizing: border-box !important;
+  padding-inline-start: max(clamp(1.375rem, 6vw, 5rem), calc(env(safe-area-inset-right, 0px) + 1.25rem)) !important;
+  padding-inline-end: max(clamp(1.375rem, 6vw, 5rem), calc(env(safe-area-inset-left, 0px) + 1.25rem)) !important;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-text-main via-text-main to-brand-primary;
+}
+
+.display-large {
+  font-size: clamp(1.875rem, 6vw, 4.5rem);
+  @apply font-black tracking-normal leading-[1.25];
+}
+
+.section-title {
+  font-size: clamp(1.625rem, 5vw, 3.75rem);
+  @apply font-black tracking-normal leading-[1.3];
+}
+
+.label-small {
+  @apply text-xs sm:text-sm font-bold tracking-normal text-brand-primary leading-relaxed mb-3 block;
+}
+
+.body-text {
+  font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+  @apply font-normal leading-[1.85] text-text-muted;
+}
+
+.section-padding {
+  padding-block: clamp(3rem, 7vw, 8rem);
+}
+
+.grid-gap-main {
+  @apply gap-7 sm:gap-10 lg:gap-12 xl:gap-16;
+}
+
+.grid-gap-cards {
+  @apply gap-5 sm:gap-7 lg:gap-10;
+}
+
+@keyframes skeleton-shine {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+.skeleton-shine {
+  animation: skeleton-shine 2.5s infinite linear;
+}
+
+.glass {
+  @apply bg-card/60 backdrop-blur-3xl border border-white/10;
+  -webkit-backdrop-filter: blur(64px);
+}
+
+/* Custom Horizontal Infinite Scroll Marquee */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.text-stroke-primary {
+  -webkit-text-stroke: 1px rgba(0, 152, 154, 0.3);
+  color: transparent;
+}
+
+.text-stroke-primary:hover {
+  -webkit-text-stroke: 1px rgba(0, 152, 154, 0.8);
+}
+
+.logo-turquoise {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(1837%) hue-rotate(151deg) brightness(91%) contrast(101%);
+}
+
+.logo-white {
+  filter: brightness(0) invert(1);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* ==========================================================================
+   Mobile-Only Hero Section Refinement (< 640px)
+   Strictly isolated via @media (max-width: 639.98px) so Tablet & Desktop
+   layouts and all other sections remain 100% untouched.
+   Sequence:
+   1. Badges (.hero-badges)
+   2. Title & Subtitle (.hero-heading-wrap)
+   3. Description (.hero-desc)
+   4. Designer Portrait (.hero-image-frame)
+   5. Statistics Cards (.hero-stats-mobile)
+   6. Action Buttons (.hero-actions)
+   ========================================================================== */
+@media (max-width: 639.98px) {
+  #home.hero-section {
+    min-height: auto;
+    justify-content: flex-start;
+    padding-top: clamp(6.5rem, 18vw, 7.5rem);
+    padding-bottom: clamp(5.25rem, 15vw, 6.25rem);
+    overflow-x: hidden;
+  }
+
+  #home .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  /* Flatten column wrappers on mobile only so children can be ordered cleanly without DOM duplication */
+  #home .hero-copy-col,
+  #home .hero-visual-col {
+    display: contents;
+  }
+
+  /* 1. Top Badges */
+  #home .hero-badges {
+    order: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 1.15rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  #home .hero-badge-item {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    border-radius: 0.75rem;
+    line-height: 1.4;
+  }
+
+  /* 2. Arabic & English Name */
+  #home .hero-heading-wrap {
+    order: 2;
+    width: 100%;
+    margin-bottom: 0.9rem;
+    text-align: center;
+  }
+
+  #home .hero-title {
+    font-size: clamp(1.95rem, 8.2vw, 2.45rem);
+    line-height: 1.25;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  #home .hero-subtitle {
+    font-size: clamp(1.15rem, 4.8vw, 1.4rem);
+    line-height: 1.35;
+    margin-top: 0.45rem;
+    text-align: center;
+  }
+
+  /* 3. Introductory Description */
+  #home .hero-desc {
+    order: 3;
+    font-size: clamp(0.95rem, 4vw, 1.05rem);
+    line-height: 1.85;
+    max-width: 34ch;
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  /* 4. Designer Portrait directly below Description */
+  #home .hero-image-frame {
+    order: 4;
+    width: 100%;
+    max-width: clamp(220px, 64vw, 275px);
+    margin-inline: auto;
+    margin-bottom: 1.35rem;
+    padding-block: 0.25rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  #home .hero-portrait-img {
+    max-height: clamp(255px, 72vw, 315px) !important;
+    width: auto;
+    margin-inline: auto;
+    object-fit: contain;
+  }
+
+  /* 5. Statistics Cards directly below Portrait (side-by-side) */
+  #home .hero-stats-mobile {
+    order: 5;
+    margin-top: 0 !important;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    max-width: 22.5rem;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  #home .hero-stat-card {
+    padding: 0.9rem 0.95rem;
+    border-radius: 1rem;
+  }
+
+  #home .hero-stat-num {
+    font-size: 1.3rem;
+  }
+
+  #home .hero-stat-unit {
+    font-size: 0.725rem;
+  }
+
+  #home .hero-stat-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.65rem;
+  }
+
+  #home .hero-stat-label {
+    font-size: 0.775rem;
+    margin-top: 0.45rem;
+    line-height: 1.4;
+  }
+
+  /* 6. Action Buttons at the bottom below Statistics Cards (stacked full-width) */
+  #home .hero-actions {
+    order: 6;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 22.5rem;
+    margin-inline: auto;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 20;
+  }
+
+  /* Ensure Magnetic wrapper spans full width on mobile */
+  #home .hero-actions > div {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  #home .hero-primary-btn,
+  #home .hero-secondary-btn {
+    height: 3.2rem;
+    padding-inline: 1.35rem;
+    font-size: 0.95rem;
+    border-radius: 0.95rem;
+    width: 100%;
+  }
+
+  /* Keep Floating WhatsApp button tucked cleanly away from CTA buttons & stats on mobile */
+  aside[aria-label="تواصل عبر واتساب"] {
+    bottom: max(0.875rem, calc(env(safe-area-inset-bottom, 0px) + 0.5rem));
+    inset-inline-end: max(0.875rem, calc(env(safe-area-inset-left, 0px) + 0.75rem));
+  }
+}
+
+/* Larger Mobile Phones (480px - 639.98px): Harmonized max-width while keeping buttons stacked full-width */
+@media (min-width: 480px) and (max-width: 639.98px) {
+  #home .hero-stats-mobile,
+  #home .hero-actions {
+    max-width: 24.5rem;
+    gap: 0.85rem;
+  }
+}
+
+/* Compact Mobile Phones (< 360px): Prevent any crowding or horizontal overflow */
+@media (max-width: 359.98px) {
+  #home .hero-title {
+    font-size: 1.75rem;
+  }
+
+  #home .hero-badge-item {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.7rem;
+  }
+
+  #home .hero-image-frame {
+    max-width: 205px;
+  }
+
+  #home .hero-stat-card {
+    padding: 0.75rem 0.75rem;
+  }
+
+  #home .hero-stat-num {
+    font-size: 1.15rem;
+  }
+
+  #home .hero-stat-label {
+    font-size: 0.72rem;
+  }
+}
+
+/* ==========================================================================
+   MOBILE-ONLY FOOTER REFINEMENT (< 768px)
+   Hides Quick Links (روابط الوصول السريع) on mobile screens only and
+   rebalances spacing for the remaining Footer elements.
+   Tablet (>= 768px) and Desktop (>= 1024px) remain 100% untouched.
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  #contact .footer-quick-links {
+    display: none !important;
+  }
+
+  #contact .footer-main-wrap {
+    padding-bottom: 2.25rem;
+  }
+
+  #contact .footer-main-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  #contact .footer-brand-col {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+  }
+
+  #contact .footer-contact-col {
+    width: 100%;
+    padding-top: 0.15rem;
+  }
+}
