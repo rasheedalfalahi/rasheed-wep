@@ -100,15 +100,8 @@ export default function Hero() {
                   transition={{ delay: 0.55 }}
                   className="w-full sm:w-auto"
                 >
-                  <a 
-                    href="#contact" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const element = document.getElementById('contact');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
+                  <Link 
+                    to="/contact" 
                     className="hero-secondary-btn group relative h-12 sm:h-14 px-6 sm:px-8 flex items-center justify-center border border-white/15 hover:border-brand-primary/40 bg-white/5 hover:bg-white/[0.08] rounded-xl sm:rounded-2xl text-sm sm:text-base font-bold text-white transition-all duration-300 w-full sm:min-w-[180px] overflow-hidden"
                   >
                     {/* Interactive hover subtle light sweep */}
@@ -118,7 +111,7 @@ export default function Hero() {
                       <span>ابدأ مشروعك معنا</span>
                       <ArrowUpLeft size={16} className="opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0" />
                     </span>
-                  </a>
+                  </Link>
                 </motion.div>
               </Magnetic>
             </div>

@@ -3,9 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, useRef } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'motion/react';
+import React, { useEffect, useRef } from 'react';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { initLenis, getLenis } from './lib/lenis';
 import Navigation from './components/Navigation';
 import SplashScreen from './components/SplashScreen';
@@ -22,6 +21,30 @@ import TestimonialsPage from './pages/TestimonialsPage';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+
+// If a user opens a legacy hash link (e.g. /#/blog), convert it to a clean path (/blog) before BrowserRouter initializes
+if (typeof window !== 'undefined' && window.location.hash.startsWith('#/')) {
+  const cleanPath = window.location.hash.slice(1);
+  window.history.replaceState(null, '', cleanPath);
+}
+
+function LegacyHashRedirect() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash.startsWith('#/')) {
+        const cleanPath = window.location.hash.slice(1);
+        navigate(cleanPath, { replace: true });
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [navigate]);
+
+  return null;
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -77,12 +100,6 @@ export default function App() {
       // Ignore storage errors
     }
 
-    // If the URL hash is a raw anchor like '#contact' instead of a router path '#/contact',
-    // clean it up to '#/' so the router goes to Home and the browser doesn't auto-scroll to the anchor on reload.
-    if (window.location.hash && !window.location.hash.startsWith('#/')) {
-      window.location.hash = '#/';
-    }
-
     // Force scroll to top on initial page load / refresh
     window.scrollTo(0, 0);
 
@@ -103,7 +120,8 @@ export default function App() {
   }, []);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
+      <LegacyHashRedirect />
       <ScrollToTop />
       <SplashScreen />
       <ShortcutManager />
@@ -119,7 +137,7 @@ export default function App() {
         <MobileBottomNav />
         <Footer />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
