@@ -21,7 +21,7 @@ import SkeletonImage from '../components/SkeletonImage';
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
-  const project = projects.find((p) => p.id === id);
+  const project = projects.find((p) => p.id === id || p.slug === id);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

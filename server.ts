@@ -1,8 +1,10 @@
 import express from 'express';
+import fs from 'fs';
 import path from 'path';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
 import { createServer as createViteServer } from 'vite';
+import { injectSeoIntoHtml } from './src/lib/seo';
 
 async function startServer() {
   const app = express();
@@ -88,7 +90,14 @@ async function startServer() {
     const distPath = path.resolve(process.cwd(), 'dist');
     app.use(express.static(distPath));
     app.get('*all', (req, res) => {
-      res.sendFile(path.resolve(distPath, 'index.html'));
+      const indexPath = path.resolve(distPath, 'index.html');
+      if (fs.existsSync(indexPath)) {
+        const rawHtml = fs.readFileSync(indexPath, 'utf-8');
+        const tailoredHtml = injectSeoIntoHtml(rawHtml, req.path);
+        res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(tailoredHtml);
+      } else {
+        res.status(404).send('Not found');
+      }
     });
   }
 
@@ -97,4 +106,15 @@ async function startServer() {
   });
 }
 
-startServer();
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled Rejection:', reason);
+});
+
+startServer().catch((err) => {
+  console.error('Failed to start server:', err);
+});
+

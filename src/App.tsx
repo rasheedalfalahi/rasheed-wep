@@ -21,6 +21,7 @@ import TestimonialsPage from './pages/TestimonialsPage';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import RouteSEOUpdater from './components/RouteSEOUpdater';
 
 // If a user opens a legacy hash link (e.g. /#/blog), convert it to a clean path (/blog) before BrowserRouter initializes
 if (typeof window !== 'undefined' && window.location.hash.startsWith('#/')) {
@@ -57,7 +58,7 @@ function ScrollToTop() {
     // Skip scrolling to top when returning to /projects from a project detail page
     if (
       pathname === '/projects' &&
-      (prevPath.startsWith('/project/') || sessionStorage.getItem('projects_restore') === 'true')
+      (prevPath.startsWith('/project/') || prevPath.startsWith('/projects/') || sessionStorage.getItem('projects_restore') === 'true')
     ) {
       return;
     }
@@ -80,6 +81,7 @@ function AnimatedRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/project/:id" element={<ProjectDetail />} />
+      <Route path="/projects/:id" element={<ProjectDetail />} />
       <Route path="/services" element={<Services />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:id" element={<BlogPost />} />
@@ -122,6 +124,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <LegacyHashRedirect />
+      <RouteSEOUpdater />
       <ScrollToTop />
       <SplashScreen />
       <ShortcutManager />

@@ -16,7 +16,7 @@ import SkeletonImage from '../components/SkeletonImage';
 
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
-  const post = blogPosts.find((p) => p.id === id);
+  const post = blogPosts.find((p) => p.id === id || p.slug === id);
   const [copiedSuccess, setCopiedSuccess] = useState(false);
 
   const { scrollYProgress } = useScroll();
