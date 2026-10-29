@@ -1,5 +1,4 @@
 import tailwindcss from '@tailwindcss/vite';
-import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
@@ -68,10 +67,6 @@ export default defineConfig(() => {
       seoStaticPagesPlugin(),
       react(),
       tailwindcss(),
-      legacy({
-        targets: ['defaults', 'not IE 11', 'ios >= 10', 'android >= 5'],
-        polyfills: true,
-      }),
     ],
     resolve: {
       alias: {
